@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     margin-top: 50px;
+    max-width: 960px;
 }
 
 .main-container {
@@ -21,3 +22,11 @@
     position: relative;
     right: -10px;
 }
+
+.cw, .ccw {
+    transform-origin: center;
+}
+
+/* .cw path:first-of-type, .ccw path:first-of-type{
+    transform-origin: center;
+} */
