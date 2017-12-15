@@ -1,0 +1,23 @@
+.container.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin-top: 50px;
+}
+
+.main-container {
+    background: url(../img/tooth-02-02.png) repeat-y;
+    padding-left: 50px;
+    background-size: 6.2%;
+    background-position-y: -6px;
+}
+
+.gear-box svg {
+    right: -12px;
+    top: 50px;
+    position: sticky;
+}
+
+.gear-box {
+    position: relative;
+    right: -10px;
+}
