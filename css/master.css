@@ -39,6 +39,44 @@ svg path {
     transform-origin: center;
 }
 
+img {
+    max-width: 100%;
+}
+
+.slide-out {
+    background: #000;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    color: #fff;
+    width: 100%;
+    left: 0px;
+    border: 1px inset #EFB;
+    z-index: -1;
+    text-align: right;
+}
+
+.project-box {
+    position: relative;
+}
+
+.project {
+    position: relative;
+    cursor: pointer;
+}
+
+.project h3 {
+    position: absolute;
+    background: #00000078;
+    width: 100%;
+    top: 46%;
+    text-align: center;
+    padding: 10px 0 14px;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
 /* .cw path:first-of-type, .ccw path:first-of-type{
     transform-origin: center;
 } */
