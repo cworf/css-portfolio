@@ -2,7 +2,7 @@ $(function(){
 
 // rotate gears on scroll
     $(document).scroll(function(){
-        var ogSpeed = .966;
+        var ogSpeed = .966666;
         $('#Gears > g > g').each(function(){
             var driver = $(this).attr('data-driver'),
             self = $(this).attr('data-self'),
