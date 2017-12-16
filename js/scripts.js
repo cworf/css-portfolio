@@ -2,12 +2,23 @@ $(function(){
 
 // rotate gears on scroll
     $(document).scroll(function(){
-        var distance = $(this).scrollTop() / .966;
-        $('.ccw').css('transform', 'rotate(-' + distance + 'deg)');
-        $('.cw').css('transform', 'rotate(' + distance + 'deg)');
+        var ogSpeed = .966;
+        $('#Gears > g > g').each(function(){
+            var driver = $(this).attr('data-driver'),
+                self = $(this).attr('data-self');
+                var thisClass = $(this).attr('class');
+
+                if (thisClass === "ccw") {
+                    var rotateSpeed = 0 - ($(document).scrollTop() / (ogSpeed * self / driver));
+                } else {
+                    var rotateSpeed = $(document).scrollTop() / (ogSpeed * self / driver);
+                }
+
+            $(this).css('transform', 'rotate(' + rotateSpeed + 'deg)');
+        });
     });
 
-    //toggle class for project sideout
+    //toggle class for project slideout
 
     $('.project').click(function(){
         $(this).next().toggleClass('visible');

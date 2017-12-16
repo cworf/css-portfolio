@@ -99,7 +99,7 @@ img {
 }
 
 .slide-out {
-    background: #000 url(img/tooth-02-02.png) 100% 94% repeat-x;
+    background: #000 url(../img/tooth-02-02.png) 100% 94% repeat-x;
 }
 
 /* .cw path:first-of-type, .ccw path:first-of-type{
