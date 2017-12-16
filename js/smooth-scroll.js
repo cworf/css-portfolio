@@ -6,12 +6,12 @@ $(document).ready(function(){
 
       // Store hash
       var hash = $(event.currentTarget).attr("href");
-
+      var offset = $(hash).offset().top; //determine location of object
+      var scrollSpeed = Math.abs(($(document).scrollTop() - offset)* 5); //determine currant distance from object
       // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
       $('html, body').animate({
-        scrollTop: $(hash).offset().top
-    }, 3000, function(){
+        scrollTop: offset
+    }, scrollSpeed, function(){
 
         // Add hash (#) to URL when done scrolling (default click behavior)
         window.location.hash = hash;

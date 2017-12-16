@@ -14,15 +14,14 @@ section {
 .container.grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    margin-top: 50px;
     max-width: 960px;
 }
 
 .main-container {
     background: url(../img/tooth-02-02.png) repeat-y;
-    padding-left: 50px;
+    padding: 50px 0 0 50px;
     background-size: 6.2%;
-    background-position-y: -6px;
+    background-position-y: 16px;
 }
 
 .gear-box .sticky {
@@ -50,15 +49,15 @@ img {
     background: #000;
     position: absolute;
     top: 0;
-    height: 100%;
+    height: 86%;
     color: #fff;
     width: 100%;
     left: 0px;
-    border: 1px inset #EFB;
+    box-shadow: inset 0 0 0 2px;
     z-index: -2;
     text-align: right;
-    padding-left: 44%;
-    transition: 2s ease;
+    padding: 15px 15px 15px calc(44% + 5px);
+    transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
 }
 .slide-out.visible {
     left: 56%;
@@ -79,7 +78,8 @@ img {
     bottom: -46px;
     right: -38px;
     z-index: -1;
-    transition: 2s ease;
+    transform: rotate(8deg);
+    transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
 }
 
 .project h3 {
@@ -95,13 +95,7 @@ img {
 }
 
 .project.roll:after {
-    transform: rotate(540deg);
+    transform: rotate(418deg);
 }
 
-.slide-out {
-    background: #000 url(../img/tooth-02-02.png) 100% 94% repeat-x;
-}
-
-/* .cw path:first-of-type, .ccw path:first-of-type{
-    transform-origin: center;
-} */
+.slide-out:after {.slide-out: aftercontent:"";background: url(../img/tooth-02-02.png) repeat-x;content: "";position: absolute;left: 0;width: 100%;height: 14%;top: 99%;z-index: -3;box-shadow: inset 0 2px;}
