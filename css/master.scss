@@ -11,6 +11,14 @@ section {
     margin-bottom: 30px;
 }
 
+.mobile-burger {
+    display: none
+}
+
+.clickable {
+    cursor: pointer;
+}
+
 .container.grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -98,4 +106,91 @@ img {
     transform: rotate(418deg);
 }
 
-.slide-out:after {.slide-out: aftercontent:"";background: url(../img/tooth-02-02.png) repeat-x;content: "";position: absolute;left: 0;width: 100%;height: 14%;top: 99%;z-index: -3;box-shadow: inset 0 2px;}
+.slide-out:after {
+    background: url(../img/tooth-02-02.png) repeat-x;
+    content: "";
+    position: absolute;
+    left: 0;width: 100%;
+    height: 14%;
+    top: 99%;
+    z-index: -3;
+    box-shadow: inset 0 2px;
+}
+
+.move .main-container h1, .move .main-container .main {
+    opacity: 0.2;
+}
+
+.main-container h1, .main-container .main {
+    transition: .5s ease;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .container.grid {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .project-box {
+        overflow: hidden;
+    }
+
+    .slide-out {
+        top: 100%;
+        height: 100%;
+        z-index: 1;
+        width: 86%;
+        padding: 20px;
+    }
+
+    .slide-out:after {
+        background-repeat: repeat-y;
+        width: 14%;
+        height: 100%;
+        left: 99%;
+        top: 0;
+    }
+
+    .project:after{
+        z-index:1;
+    }
+    .slide-out.visible {
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width:525px){
+    .container.grid {
+        grid-template-columns: 1fr;
+        transition: .5s ease;
+        position: relative;
+        left: 0;
+    }
+
+    .mobile-burger {
+        display: block;
+        position: absolute;
+        left: 67px;
+        font-size: 36px;
+    }
+    .gear-box {
+        position: absolute;
+        width: 232.5px;
+        left: -232.5px;
+        transition: .5s ease;
+    }
+
+    .move .gear-box {
+        left: -207.5px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container.grid.move {
+        left: 232.5px;
+    }
+}

@@ -24,4 +24,10 @@ $(function(){
         $(this).next().toggleClass('visible');
         $(this).toggleClass('roll');
     });
+
+    //TOGGLE - burger
+
+    $('.mobile-burger').click(function(){
+        $('.container.grid').toggleClass('move');
+    });
 });
