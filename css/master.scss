@@ -5,6 +5,7 @@ body {
 
 svg path {
     fill: #fff;
+    transition: .5s ease;
 }
 
 section {
@@ -32,17 +33,17 @@ section {
     background-position-y: 16px;
 }
 
-.gear-box .sticky {
-    right: -12px;
-    top: 50px;
-    position: sticky;
-}
-.gear-box svg {
-    width: 100%;
-}
 .gear-box {
     position: relative;
     right: -10px;
+    .sticky {
+        right: -12px;
+        top: 50px;
+        position: sticky;
+    }
+    svg {
+        width: 100%;
+    }
 }
 
 .cw, .ccw {
@@ -66,11 +67,10 @@ img {
     text-align: right;
     padding: 15px 15px 15px calc(44% + 5px);
     transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+    &.visible {
+        left: 56%;
+    }
 }
-.slide-out.visible {
-    left: 56%;
-}
-
 .project-box {
     position: relative;
 }
@@ -78,34 +78,30 @@ img {
 .project {
     position: relative;
     cursor: pointer;
+    &:after {
+        content: url(../img/side-gear-03.png);
+        position: absolute;
+        bottom: -46px;
+        right: -38px;
+        z-index: -1;
+        transform: rotate(8deg);
+        transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+    }
+    h3 {
+        position: absolute;
+        background: #00000078;
+        width: 100%;
+        top: 46%;
+        text-align: center;
+        padding: 10px 0 14px;
+        margin: 0;
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &.roll:after {
+        transform: rotate(418deg);
+    }
 }
-
-.project:after {
-    content: url(../img/side-gear-03.png);
-    position: absolute;
-    bottom: -46px;
-    right: -38px;
-    z-index: -1;
-    transform: rotate(8deg);
-    transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
-}
-
-.project h3 {
-    position: absolute;
-    background: #00000078;
-    width: 100%;
-    top: 46%;
-    text-align: center;
-    padding: 10px 0 14px;
-    margin: 0;
-    line-height: 1;
-    text-transform: uppercase;
-}
-
-.project.roll:after {
-    transform: rotate(418deg);
-}
-
 .slide-out:after {
     background: url(../img/tooth-02-02.png) repeat-x;
     content: "";
@@ -162,35 +158,45 @@ img {
 }
 
 @media screen and (max-width:525px){
-    .container.grid {
-        grid-template-columns: 1fr;
-        transition: .5s ease;
-        position: relative;
-        left: 0;
-    }
-
-    .mobile-burger {
-        display: block;
-        position: absolute;
-        left: 67px;
-        font-size: 36px;
-    }
-    .gear-box {
-        position: absolute;
-        width: 232.5px;
-        left: -232.5px;
-        transition: .5s ease;
-    }
-
-    .move .gear-box {
-        left: -207.5px;
-    }
 
     body {
         overflow-x: hidden;
     }
 
-    .container.grid.move {
-        left: 232.5px;
+    .container.grid {
+        grid-template-columns: 1fr;
+        transition: .5s ease;
+        position: relative;
+        left: 0;
+        &.move {
+            left: 232.5px;
+        }
     }
+
+    .mobile-burger {
+        display: block;
+        position: fixed;
+        left: 67px;
+        font-size: 36px;
+        transition: .5s ease;
+    }
+    .gear-box {
+        position: fixed;
+        width: 232.5px;
+        left: -232.5px;
+        transition: .5s ease;
+    }
+
+    .move {
+        .gear-box {
+            left: 25px;
+            height: 100vh;
+            overflow: auto;
+        }
+        .mobile-burger {
+            left: 299.5px;
+        }
+    }
+
+
 }

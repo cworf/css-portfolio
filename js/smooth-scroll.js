@@ -17,4 +17,40 @@ $(document).ready(function(){
         window.location.hash = hash;
       });
   });
+
+// color inner circles on gears while scrolling
+
+  $(document).scroll(function(){
+      var windowLocation = $(this).scrollTop();
+      $('svg a').each(function(){
+          var linkHash = $(this).attr('href');
+          var elementLocation = $(linkHash).offset().top;
+          var distance = Math.abs(windowLocation - elementLocation);
+          var color = distance / 2;
+
+          $(this).children('path:nth-of-type(2)').css('fill', 'rgb(255, ' + color + ', ' + color + ')')
+
+          if(visible($(linkHash))){
+              $(this).children('path:nth-of-type(1)').css('fill', 'red');
+          }
+          else {
+              $(this).children('path:nth-of-type(1)').css('fill', 'white');
+          }
+      });
+  });
+
+  function visible(section){
+
+      //detect viewbox
+      var windowTop = $(window).scrollTop();
+      var windowBtm = windowTop + $(window).height();
+
+      //detect height and location of section
+      var sectionTop = $(section).offset().top;
+      var sectionBtm = sectionTop + $(section).height();
+
+//return true if container is either fully inside the window or spanning a greater height than the window
+      return (((sectionBtm <= windowBtm) && (sectionTop >= windowTop)) || ((sectionBtm >= windowBtm) && (sectionTop <= windowTop)));
+  }
+
 });
