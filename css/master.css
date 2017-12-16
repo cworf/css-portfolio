@@ -7,6 +7,9 @@ svg path {
     fill: #fff;
 }
 
+section {
+    margin-bottom: 30px;
+}
 
 .container.grid {
     display: grid;
@@ -52,8 +55,13 @@ img {
     width: 100%;
     left: 0px;
     border: 1px inset #EFB;
-    z-index: -1;
+    z-index: -2;
     text-align: right;
+    padding-left: 44%;
+    transition: 2s ease;
+}
+.slide-out.visible {
+    left: 56%;
 }
 
 .project-box {
@@ -63,6 +71,15 @@ img {
 .project {
     position: relative;
     cursor: pointer;
+}
+
+.project:after {
+    content: url(../img/side-gear-03.png);
+    position: absolute;
+    bottom: -46px;
+    right: -38px;
+    z-index: -1;
+    transition: 2s ease;
 }
 
 .project h3 {
@@ -75,6 +92,14 @@ img {
     margin: 0;
     line-height: 1;
     text-transform: uppercase;
+}
+
+.project.roll:after {
+    transform: rotate(540deg);
+}
+
+.slide-out {
+    background: #000 url(img/tooth-02-02.png) 100% 94% repeat-x;
 }
 
 /* .cw path:first-of-type, .ccw path:first-of-type{
