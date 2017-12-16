@@ -5,8 +5,8 @@ $(function(){
         var ogSpeed = .966;
         $('#Gears > g > g').each(function(){
             var driver = $(this).attr('data-driver'),
-                self = $(this).attr('data-self');
-                var thisClass = $(this).attr('class');
+            self = $(this).attr('data-self'),
+            thisClass = $(this).attr('class');
 
                 if (thisClass === "ccw") {
                     var rotateSpeed = 0 - ($(document).scrollTop() / (ogSpeed * self / driver));

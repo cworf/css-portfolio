@@ -32,6 +32,7 @@ section {
     padding: 50px 0 0 50px;
     background-size: 6.2%;
     background-position-y: 16px;
+    animation: gearUp 2s .7s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29);
 }
 
 .gear-box {
@@ -41,9 +42,12 @@ section {
         right: -12px;
         top: 50px;
         position: sticky;
+        perspective: 2000px;
     }
     svg {
         width: 100%;
+        overflow:unset;
+        animation: zoomIn .6s backwards ease;
     }
 }
 
@@ -120,6 +124,92 @@ img {
 
 .main-container h1, .main-container .main {
     transition: .5s ease;
+}
+
+// #Gears > g > g {
+//     transition: .5s ease;
+// }
+
+@for $i from 1 through 9 {
+    $delay : $i/12 + 2 ;
+    #Gears > g > g:nth-of-type(#{$i}):not([id^='link-']){
+        animation: slideInLeft 0.5s #{$delay}s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29);
+
+    }
+}
+
+@keyframes slideInLeft {
+    from{
+        opacity: 0;
+        transform: translateX(-900px);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translate3d(100px, 0px, 2000px);
+    }
+    to {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+
+$gears: (
+    16 : 12,
+    12 : 12,
+    8 : 12,
+    6 : 12,
+);
+
+@each $self, $driver in $gears {
+    $calc : 520 / (.966 * $self / $driver);
+    $delay : random(500);
+    g.ccw[data-driver='#{$driver}'][data-self='#{$self}'] {
+        animation:slideInLeft 0.5s #{$delay}ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+    }
+
+    @keyframes introRotateCCW#{$driver}#{$self} {
+        from {
+            transform:rotate($calc + deg);
+        }
+        to {
+            transform:rotate(0deg);
+        }
+    }
+}
+@each $self, $driver in $gears {
+    $calc : -520 / (.966 * $self / $driver);
+    $delay : random(500);
+    g.cw[data-driver='#{$driver}'][data-self='#{$self}'] {
+        animation:slideInLeft 0.5s #{$delay}ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+    }
+
+    @keyframes introRotateCW#{$driver}#{$self} {
+        from {
+            transform:rotate($calc + deg);
+        }
+        to {
+            transform:rotate(0deg);
+        }
+    }
+}
+
+@keyframes gearUp {
+    from {
+        opacity: 0;
+        margin-top: 520px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+
 }
 
 
