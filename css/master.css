@@ -147,7 +147,7 @@ img {
   to {
     transform: translate3d(0px, 0px, 0px); } }
 g.ccw[data-driver='12'][data-self='16'] {
-  animation: slideInLeft 0.5s 136ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCCW1216 {
   from {
@@ -155,7 +155,7 @@ g.ccw[data-driver='12'][data-self='16'] {
   to {
     transform: rotate(0deg); } }
 g.ccw[data-driver='12'][data-self='12'] {
-  animation: slideInLeft 0.5s 10ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1212 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1212 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCCW1212 {
   from {
@@ -163,7 +163,7 @@ g.ccw[data-driver='12'][data-self='12'] {
   to {
     transform: rotate(0deg); } }
 g.ccw[data-driver='12'][data-self='8'] {
-  animation: slideInLeft 0.5s 113ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCCW128 {
   from {
@@ -171,7 +171,7 @@ g.ccw[data-driver='12'][data-self='8'] {
   to {
     transform: rotate(0deg); } }
 g.ccw[data-driver='12'][data-self='6'] {
-  animation: slideInLeft 0.5s 386ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCCW126 {
   from {
@@ -179,7 +179,7 @@ g.ccw[data-driver='12'][data-self='6'] {
   to {
     transform: rotate(0deg); } }
 g.cw[data-driver='12'][data-self='16'] {
-  animation: slideInLeft 0.5s 49ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCW1216 {
   from {
@@ -187,7 +187,7 @@ g.cw[data-driver='12'][data-self='16'] {
   to {
     transform: rotate(0deg); } }
 g.cw[data-driver='12'][data-self='12'] {
-  animation: slideInLeft 0.5s 255ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW1212 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW1212 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCW1212 {
   from {
@@ -195,7 +195,7 @@ g.cw[data-driver='12'][data-self='12'] {
   to {
     transform: rotate(0deg); } }
 g.cw[data-driver='12'][data-self='8'] {
-  animation: slideInLeft 0.5s 499ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCW128 {
   from {
@@ -203,13 +203,25 @@ g.cw[data-driver='12'][data-self='8'] {
   to {
     transform: rotate(0deg); } }
 g.cw[data-driver='12'][data-self='6'] {
-  animation: slideInLeft 0.5s 9ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
 @keyframes introRotateCW126 {
   from {
     transform: rotate(-1076.6045548654deg); }
   to {
     transform: rotate(0deg); } }
+#Gears > g > g[id^='link-']:nth-of-type(1) {
+  animation-delay: 0.0588235294s, 0.7s; }
+
+#Gears > g > g[id^='link-']:nth-of-type(2) {
+  animation-delay: 0.1176470588s, 0.7s; }
+
+#Gears > g > g[id^='link-']:nth-of-type(3) {
+  animation-delay: 0.1764705882s, 0.7s; }
+
+#Gears > g > g[id^='link-']:nth-of-type(4) {
+  animation-delay: 0.2352941176s, 0.7s; }
+
 @keyframes gearUp {
   from {
     opacity: 0;

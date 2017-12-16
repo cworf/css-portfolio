@@ -169,9 +169,8 @@ $gears: (
 
 @each $self, $driver in $gears {
     $calc : 520 / (.966 * $self / $driver);
-    $delay : random(500);
     g.ccw[data-driver='#{$driver}'][data-self='#{$self}'] {
-        animation:slideInLeft 0.5s #{$delay}ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+        animation:slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
     }
 
     @keyframes introRotateCCW#{$driver}#{$self} {
@@ -185,9 +184,8 @@ $gears: (
 }
 @each $self, $driver in $gears {
     $calc : -520 / (.966 * $self / $driver);
-    $delay : random(500);
     g.cw[data-driver='#{$driver}'][data-self='#{$self}'] {
-        animation:slideInLeft 0.5s #{$delay}ms backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
+        animation:slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW#{$driver}#{$self} 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29);
     }
 
     @keyframes introRotateCW#{$driver}#{$self} {
@@ -200,6 +198,11 @@ $gears: (
     }
 }
 
+@for $i from 1 through 4 {
+    #Gears > g > g[id^='link-']:nth-of-type(#{$i}) {
+        animation-delay: $i / 17 + s, .7s;
+    }
+}
 @keyframes gearUp {
     from {
         opacity: 0;
