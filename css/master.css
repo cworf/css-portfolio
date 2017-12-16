@@ -10,7 +10,8 @@ section {
   margin-bottom: 30px; }
 
 .mobile-burger {
-  display: none; }
+  display: none;
+  z-index: 99; }
 
 .clickable {
   cursor: pointer; }

@@ -49,8 +49,8 @@ $(document).ready(function(){
       var sectionTop = $(section).offset().top;
       var sectionBtm = sectionTop + $(section).height();
 
-//return true if container is either fully inside the window or spanning a greater height than the window
-      return (((sectionBtm <= windowBtm) && (sectionTop >= windowTop)) || ((sectionBtm >= windowBtm) && (sectionTop <= windowTop)));
+      //return true if container is either fully inside the window or spanning a greater height than the window, or taking up more than half of the window
+      return (((sectionBtm <= windowBtm) && (sectionTop >= windowTop)) || ((sectionBtm >= windowBtm) && (sectionTop <= windowTop)) || ((sectionBtm >= windowBtm) && (((sectionTop - windowTop) / $(window).height()) < .5)) || ((sectionTop <= windowTop) && (((windowBtm - sectionBtm) / $(window).height()) < .5)));
   }
 
 });
