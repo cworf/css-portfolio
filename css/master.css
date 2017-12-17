@@ -107,6 +107,11 @@ img {
 .main-container h1, .main-container .main {
   transition: .5s ease; }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em; }
+
 #Gears > g > g:nth-of-type(1):not([id^='link-']) {
   animation: slideInLeft 0.5s 2.0833333333s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
@@ -162,22 +167,6 @@ g.ccw[data-driver='12'][data-self='12'] {
     transform: rotate(538.3022774327deg); }
   to {
     transform: rotate(0deg); } }
-g.ccw[data-driver='12'][data-self='8'] {
-  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
-
-@keyframes introRotateCCW128 {
-  from {
-    transform: rotate(807.4534161491deg); }
-  to {
-    transform: rotate(0deg); } }
-g.ccw[data-driver='12'][data-self='6'] {
-  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
-
-@keyframes introRotateCCW126 {
-  from {
-    transform: rotate(1076.6045548654deg); }
-  to {
-    transform: rotate(0deg); } }
 g.cw[data-driver='12'][data-self='16'] {
   animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
@@ -194,33 +183,17 @@ g.cw[data-driver='12'][data-self='12'] {
     transform: rotate(-538.3022774327deg); }
   to {
     transform: rotate(0deg); } }
-g.cw[data-driver='12'][data-self='8'] {
-  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW128 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
-
-@keyframes introRotateCW128 {
-  from {
-    transform: rotate(-807.4534161491deg); }
-  to {
-    transform: rotate(0deg); } }
-g.cw[data-driver='12'][data-self='6'] {
-  animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCW126 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
-
-@keyframes introRotateCW126 {
-  from {
-    transform: rotate(-1076.6045548654deg); }
-  to {
-    transform: rotate(0deg); } }
 #Gears > g > g[id^='link-']:nth-of-type(1) {
-  animation-delay: 0.0588235294s, 0.7s; }
+  animation-delay: 0.1s, 0.7s; }
 
 #Gears > g > g[id^='link-']:nth-of-type(2) {
-  animation-delay: 0.1176470588s, 0.7s; }
+  animation-delay: 0.2s, 0.7s; }
 
 #Gears > g > g[id^='link-']:nth-of-type(3) {
-  animation-delay: 0.1764705882s, 0.7s; }
+  animation-delay: 0.3s, 0.7s; }
 
 #Gears > g > g[id^='link-']:nth-of-type(4) {
-  animation-delay: 0.2352941176s, 0.7s; }
+  animation-delay: 0.4s, 0.7s; }
 
 @keyframes gearUp {
   from {

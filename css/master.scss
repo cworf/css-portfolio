@@ -126,6 +126,13 @@ img {
     transition: .5s ease;
 }
 
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+
+
 // #Gears > g > g {
 //     transition: .5s ease;
 // }
@@ -163,8 +170,8 @@ img {
 $gears: (
     16 : 12,
     12 : 12,
-    8 : 12,
-    6 : 12,
+    // 8 : 12,
+    // 6 : 12,
 );
 
 @each $self, $driver in $gears {
@@ -200,7 +207,7 @@ $gears: (
 
 @for $i from 1 through 4 {
     #Gears > g > g[id^='link-']:nth-of-type(#{$i}) {
-        animation-delay: $i / 17 + s, .7s;
+        animation-delay: $i / 10 + s, .7s;
     }
 }
 @keyframes gearUp {
