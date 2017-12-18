@@ -12,29 +12,26 @@ svg path {
 section {
   margin-bottom: 30px;
   position: relative; }
-  section:before {
+  section:before, section:after {
     position: absolute;
     content: "";
-    left: -8px;
-    top: -8px;
     width: 0%;
     height: 0%;
     visibility: hidden;
-    border: solid red;
-    border-width: 1px 0 0 1px;
-    box-shadow: -1px 0px red;
-    transition: 2s ease; }
-  section.visible:before {
-    position: absolute;
-    visibility: visible;
-    content: "";
+    transition: 2s ease;
+    z-index: -3; }
+  section:before {
     left: -19px;
     top: -8px;
+    box-shadow: -1px -1px red; }
+  section.visible:before, section.visible:after {
+    visibility: visible;
     width: calc(100% + 55px);
-    height: 109%;
-    border: solid red;
-    border-width: 1px 0 0 1px;
-    box-shadow: -1px 0px red; }
+    height: 109%; }
+  section:after {
+    right: -19px;
+    bottom: -8px;
+    box-shadow: 1px 1px red; }
 
 .mobile-burger {
   display: none;
@@ -88,7 +85,15 @@ img {
   z-index: -2;
   text-align: right;
   padding: 15px 15px 15px calc(44% + 5px);
-  transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28); }
+  transition: 1s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+  font-size: .9em; }
+  .slide-out .meta {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid red; }
+    .slide-out .meta .meta-title {
+      display: block;
+      font-weight: bold; }
   .slide-out.visible {
     left: 56%; }
 
@@ -97,6 +102,7 @@ img {
 
 .project {
   position: relative;
+  padding-top: 100%;
   cursor: pointer; }
   .project:after {
     content: url(../img/side-gear-03.png);
@@ -105,7 +111,7 @@ img {
     right: -38px;
     z-index: -1;
     transform: rotate(8deg);
-    transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28); }
+    transition: 1s cubic-bezier(0.25, 0.1, 0.71, 1.28); }
   .project h3 {
     position: absolute;
     background: #00000078;
@@ -115,9 +121,16 @@ img {
     padding: 10px 0 14px;
     margin: 0;
     line-height: 1;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    z-index: 2; }
   .project.roll:after {
     transform: rotate(418deg); }
+  .project img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
 
 .slide-out:after {
   background: url(../img/tooth-02-02.png) repeat-x;
@@ -140,6 +153,17 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1em; }
+
+.square {
+  padding-top: 100%;
+  position: relative;
+  display: block; }
+  .square img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; }
 
 section#intro p {
   padding-right: 20px; }
@@ -198,89 +222,94 @@ polygon:nth-of-type(7) {
     position: sticky;
     top: 150px;
     vertical-align: bottom; }
+    .social-menu svg polygon {
+      stroke: red; }
   .social-menu .code polygon#start-1 {
-    animation: flickerTrans1 0.2s 0.0769230769s backwards, flickerTransStroke1 0.5s 0.0769230769s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.0588235294s backwards, flickerTransStroke1 0.5s 0.0588235294s backwards reverse; }
   .social-menu .code polygon#start-2 {
-    animation: flickerTrans1 0.2s 0.1538461538s backwards, flickerTransStroke1 0.5s 0.1538461538s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.1176470588s backwards, flickerTransStroke1 0.5s 0.1176470588s backwards reverse; }
   .social-menu .code polygon#start-3 {
-    animation: flickerTrans1 0.2s 0.2307692308s backwards, flickerTransStroke1 0.5s 0.2307692308s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.1764705882s backwards, flickerTransStroke1 0.5s 0.1764705882s backwards reverse; }
   .social-menu .code polygon#start-4 {
-    animation: flickerTrans1 0.2s 0.3076923077s backwards, flickerTransStroke1 0.5s 0.3076923077s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.2352941176s backwards, flickerTransStroke1 0.5s 0.2352941176s backwards reverse; }
   .social-menu .code polygon#start-5 {
-    animation: flickerTrans1 0.2s 0.3846153846s backwards, flickerTransStroke1 0.5s 0.3846153846s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.2941176471s backwards, flickerTransStroke1 0.5s 0.2941176471s backwards reverse; }
   .social-menu .code polygon#start-6 {
-    animation: flickerTrans1 0.2s 0.4615384615s backwards, flickerTransStroke1 0.5s 0.4615384615s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.3529411765s backwards, flickerTransStroke1 0.5s 0.3529411765s backwards reverse; }
   .social-menu .code polygon#start-7 {
-    animation: flickerTrans1 0.2s 0.5384615385s backwards, flickerTransStroke1 0.5s 0.5384615385s backwards reverse; }
+    animation: flickerTrans1 0.2s 0.4117647059s backwards, flickerTransStroke1 0.5s 0.4117647059s backwards reverse; }
   .social-menu .code #start-1 {
     fill: #fff; }
   .social-menu .intro polygon#start-1 {
-    animation: flickerTrans2 0.2s 0.0769230769s backwards, flickerTransStroke2 0.5s 0.0769230769s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.0588235294s backwards, flickerTransStroke2 0.5s 0.0588235294s backwards reverse; }
   .social-menu .intro polygon#start-2 {
-    animation: flickerTrans2 0.2s 0.1538461538s backwards, flickerTransStroke2 0.5s 0.1538461538s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.1176470588s backwards, flickerTransStroke2 0.5s 0.1176470588s backwards reverse; }
   .social-menu .intro polygon#start-3 {
-    animation: flickerTrans2 0.2s 0.2307692308s backwards, flickerTransStroke2 0.5s 0.2307692308s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.1764705882s backwards, flickerTransStroke2 0.5s 0.1764705882s backwards reverse; }
   .social-menu .intro polygon#start-4 {
-    animation: flickerTrans2 0.2s 0.3076923077s backwards, flickerTransStroke2 0.5s 0.3076923077s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.2352941176s backwards, flickerTransStroke2 0.5s 0.2352941176s backwards reverse; }
   .social-menu .intro polygon#start-5 {
-    animation: flickerTrans2 0.2s 0.3846153846s backwards, flickerTransStroke2 0.5s 0.3846153846s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.2941176471s backwards, flickerTransStroke2 0.5s 0.2941176471s backwards reverse; }
   .social-menu .intro polygon#start-6 {
-    animation: flickerTrans2 0.2s 0.4615384615s backwards, flickerTransStroke2 0.5s 0.4615384615s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.3529411765s backwards, flickerTransStroke2 0.5s 0.3529411765s backwards reverse; }
   .social-menu .intro polygon#start-7 {
-    animation: flickerTrans2 0.2s 0.5384615385s backwards, flickerTransStroke2 0.5s 0.5384615385s backwards reverse; }
+    animation: flickerTrans2 0.2s 0.4117647059s backwards, flickerTransStroke2 0.5s 0.4117647059s backwards reverse; }
   .social-menu .intro #start-1 {
     fill: transparent; }
   .social-menu .web-design polygon#start-1 {
-    animation: flickerTrans3 0.2s 0.0769230769s backwards, flickerTransStroke3 0.5s 0.0769230769s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.0588235294s backwards, flickerTransStroke3 0.5s 0.0588235294s backwards reverse; }
   .social-menu .web-design polygon#start-2 {
-    animation: flickerTrans3 0.2s 0.1538461538s backwards, flickerTransStroke3 0.5s 0.1538461538s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.1176470588s backwards, flickerTransStroke3 0.5s 0.1176470588s backwards reverse; }
   .social-menu .web-design polygon#start-3 {
-    animation: flickerTrans3 0.2s 0.2307692308s backwards, flickerTransStroke3 0.5s 0.2307692308s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.1764705882s backwards, flickerTransStroke3 0.5s 0.1764705882s backwards reverse; }
   .social-menu .web-design polygon#start-4 {
-    animation: flickerTrans3 0.2s 0.3076923077s backwards, flickerTransStroke3 0.5s 0.3076923077s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.2352941176s backwards, flickerTransStroke3 0.5s 0.2352941176s backwards reverse; }
   .social-menu .web-design polygon#start-5 {
-    animation: flickerTrans3 0.2s 0.3846153846s backwards, flickerTransStroke3 0.5s 0.3846153846s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.2941176471s backwards, flickerTransStroke3 0.5s 0.2941176471s backwards reverse; }
   .social-menu .web-design polygon#start-6 {
-    animation: flickerTrans3 0.2s 0.4615384615s backwards, flickerTransStroke3 0.5s 0.4615384615s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.3529411765s backwards, flickerTransStroke3 0.5s 0.3529411765s backwards reverse; }
   .social-menu .web-design polygon#start-7 {
-    animation: flickerTrans3 0.2s 0.5384615385s backwards, flickerTransStroke3 0.5s 0.5384615385s backwards reverse; }
+    animation: flickerTrans3 0.2s 0.4117647059s backwards, flickerTransStroke3 0.5s 0.4117647059s backwards reverse; }
   .social-menu .web-design #start-1, .social-menu .web-design #start3 {
     fill: #fff; }
   .social-menu .web-design #start-7 {
     fill: transparent; }
   .social-menu .art polygon#start-1 {
-    animation: flickerTrans4 0.2s 0.0769230769s backwards, flickerTransStroke4 0.5s 0.0769230769s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.0588235294s backwards, flickerTransStroke4 0.5s 0.0588235294s backwards reverse; }
   .social-menu .art polygon#start-2 {
-    animation: flickerTrans4 0.2s 0.1538461538s backwards, flickerTransStroke4 0.5s 0.1538461538s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.1176470588s backwards, flickerTransStroke4 0.5s 0.1176470588s backwards reverse; }
   .social-menu .art polygon#start-3 {
-    animation: flickerTrans4 0.2s 0.2307692308s backwards, flickerTransStroke4 0.5s 0.2307692308s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.1764705882s backwards, flickerTransStroke4 0.5s 0.1764705882s backwards reverse; }
   .social-menu .art polygon#start-4 {
-    animation: flickerTrans4 0.2s 0.3076923077s backwards, flickerTransStroke4 0.5s 0.3076923077s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.2352941176s backwards, flickerTransStroke4 0.5s 0.2352941176s backwards reverse; }
   .social-menu .art polygon#start-5 {
-    animation: flickerTrans4 0.2s 0.3846153846s backwards, flickerTransStroke4 0.5s 0.3846153846s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.2941176471s backwards, flickerTransStroke4 0.5s 0.2941176471s backwards reverse; }
   .social-menu .art polygon#start-6 {
-    animation: flickerTrans4 0.2s 0.4615384615s backwards, flickerTransStroke4 0.5s 0.4615384615s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.3529411765s backwards, flickerTransStroke4 0.5s 0.3529411765s backwards reverse; }
   .social-menu .art polygon#start-7 {
-    animation: flickerTrans4 0.2s 0.5384615385s backwards, flickerTransStroke4 0.5s 0.5384615385s backwards reverse; }
+    animation: flickerTrans4 0.2s 0.4117647059s backwards, flickerTransStroke4 0.5s 0.4117647059s backwards reverse; }
   .social-menu .art #start-1 {
     fill: #fff;
     transform: translateX(50%); }
   .social-menu .art #start-5 {
-    fill: #fff; }
+    fill: #fff;
+    stroke: transparent; }
+  .social-menu .art #start-4 {
+    stroke: transparent; }
   .social-menu .lighting polygon#start-1 {
-    animation: flickerTrans5 0.2s 0.0769230769s backwards, flickerTransStroke5 0.5s 0.0769230769s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.0588235294s backwards, flickerTransStroke5 0.5s 0.0588235294s backwards reverse; }
   .social-menu .lighting polygon#start-2 {
-    animation: flickerTrans5 0.2s 0.1538461538s backwards, flickerTransStroke5 0.5s 0.1538461538s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.1176470588s backwards, flickerTransStroke5 0.5s 0.1176470588s backwards reverse; }
   .social-menu .lighting polygon#start-3 {
-    animation: flickerTrans5 0.2s 0.2307692308s backwards, flickerTransStroke5 0.5s 0.2307692308s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.1764705882s backwards, flickerTransStroke5 0.5s 0.1764705882s backwards reverse; }
   .social-menu .lighting polygon#start-4 {
-    animation: flickerTrans5 0.2s 0.3076923077s backwards, flickerTransStroke5 0.5s 0.3076923077s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.2352941176s backwards, flickerTransStroke5 0.5s 0.2352941176s backwards reverse; }
   .social-menu .lighting polygon#start-5 {
-    animation: flickerTrans5 0.2s 0.3846153846s backwards, flickerTransStroke5 0.5s 0.3846153846s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.2941176471s backwards, flickerTransStroke5 0.5s 0.2941176471s backwards reverse; }
   .social-menu .lighting polygon#start-6 {
-    animation: flickerTrans5 0.2s 0.4615384615s backwards, flickerTransStroke5 0.5s 0.4615384615s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.3529411765s backwards, flickerTransStroke5 0.5s 0.3529411765s backwards reverse; }
   .social-menu .lighting polygon#start-7 {
-    animation: flickerTrans5 0.2s 0.5384615385s backwards, flickerTransStroke5 0.5s 0.5384615385s backwards reverse; }
+    animation: flickerTrans5 0.2s 0.4117647059s backwards, flickerTransStroke5 0.5s 0.4117647059s backwards reverse; }
   .social-menu .lighting #start-3 {
     fill: transparent; }
   .social-menu .social-links {

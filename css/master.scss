@@ -13,30 +13,29 @@ svg path {
 section {
     margin-bottom: 30px;
     position: relative;
-    &:before {
+    &:before, &:after {
         position: absolute;
         content: "";
-        left: -8px;
-        top: -8px;
         width: 0%;
         height: 0%;
         visibility:hidden;
-        border: solid red;
-        border-width: 1px 0 0 1px;
-        box-shadow: -1px 0px red;
         transition:2s ease;
+        z-index: -3;
     }
-    &.visible:before {
-        position: absolute;
-        visibility: visible;
-        content: "";
+    &:before {
         left: -19px;
         top: -8px;
+        box-shadow: -1px -1px red;
+    }
+    &.visible:before, &.visible:after {
+        visibility: visible;
         width: calc(100% + 55px);
         height: 109%;
-        border: solid red;
-        border-width: 1px 0 0 1px;
-        box-shadow: -1px 0px red;
+    }
+    &:after {
+        right: -19px;
+        bottom: -8px;
+        box-shadow: 1px 1px red;
     }
 }
 
@@ -101,7 +100,17 @@ img {
     z-index: -2;
     text-align: right;
     padding: 15px 15px 15px calc(44% + 5px);
-    transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+    transition: 1s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+    font-size: .9em;
+    .meta {
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid red;
+        .meta-title {
+            display: block;
+            font-weight: bold;
+        }
+    }
     &.visible {
         left: 56%;
     }
@@ -112,6 +121,7 @@ img {
 
 .project {
     position: relative;
+    padding-top: 100%;
     cursor: pointer;
     &:after {
         content: url(../img/side-gear-03.png);
@@ -120,7 +130,7 @@ img {
         right: -38px;
         z-index: -1;
         transform: rotate(8deg);
-        transition: 2s cubic-bezier(0.25, 0.1, 0.71, 1.28);
+        transition: 1s cubic-bezier(0.25, 0.1, 0.71, 1.28);
     }
     h3 {
         position: absolute;
@@ -132,9 +142,17 @@ img {
         margin: 0;
         line-height: 1;
         text-transform: uppercase;
+        z-index: 2;
     }
     &.roll:after {
         transform: rotate(418deg);
+    }
+    img {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }
 .slide-out:after {
@@ -162,8 +180,18 @@ img {
     grid-gap: 1em;
 }
 
-
-
+.square {
+    padding-top: 100%;
+    position: relative;
+    display: block;
+    img {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
 
 section#intro p {
@@ -194,7 +222,7 @@ section#intro p {
 @mixin flickerTransition1 {
     @for $i from 1 through 7 {
         polygon#start-#{$i}{
-            $delay : $i/13;
+            $delay : $i/17;
             animation: flickerTrans1 .2s #{$delay}s backwards, flickerTransStroke1 .5s #{$delay}s backwards reverse;
         }
     }
@@ -202,7 +230,7 @@ section#intro p {
 @mixin flickerTransition2 {
     @for $i from 1 through 7 {
         polygon#start-#{$i}{
-            $delay : $i/13;
+            $delay : $i/17;
             animation: flickerTrans2 .2s #{$delay}s backwards, flickerTransStroke2 .5s #{$delay}s backwards reverse;
         }
     }
@@ -210,7 +238,7 @@ section#intro p {
 @mixin flickerTransition3 {
     @for $i from 1 through 7 {
         polygon#start-#{$i}{
-            $delay : $i/13;
+            $delay : $i/17;
             animation: flickerTrans3 .2s #{$delay}s backwards, flickerTransStroke3 .5s #{$delay}s backwards reverse;
         }
     }
@@ -218,7 +246,7 @@ section#intro p {
 @mixin flickerTransition4 {
     @for $i from 1 through 7 {
         polygon#start-#{$i}{
-            $delay : $i/13;
+            $delay : $i/17;
             animation: flickerTrans4 .2s #{$delay}s backwards, flickerTransStroke4 .5s #{$delay}s backwards reverse;
         }
     }
@@ -226,7 +254,7 @@ section#intro p {
 @mixin flickerTransition5 {
     @for $i from 1 through 7 {
         polygon#start-#{$i}{
-            $delay : $i/13;
+            $delay : $i/17;
             animation: flickerTrans5 .2s #{$delay}s backwards, flickerTransStroke5 .5s #{$delay}s backwards reverse;
         }
     }
@@ -239,6 +267,9 @@ section#intro p {
         position: sticky;
         top:150px;
         vertical-align: bottom;
+        polygon {
+            stroke: red;
+        }
     }
 
     .code {
@@ -271,6 +302,10 @@ section#intro p {
         }
         #start-5 {
             fill:#fff;
+            stroke: transparent;
+        }
+        #start-4 {
+            stroke: transparent;
         }
     }
     .lighting {
