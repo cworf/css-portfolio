@@ -112,6 +112,13 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1em; }
 
+.social-menu {
+  padding-top: 150px;
+  padding-right: 100px; }
+
+section#intro p {
+  padding-right: 20px; }
+
 #Gears > g > g:nth-of-type(1):not([id^='link-']) {
   animation: slideInLeft 0.5s 2.0833333333s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
@@ -139,6 +146,27 @@ img {
 #Gears > g > g:nth-of-type(9):not([id^='link-']) {
   animation: slideInLeft 0.5s 2.75s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 
+polygon:nth-of-type(1) {
+  animation: flickerIn 1.5s 2.5769230769s backwards, flickerInStroke 1.5s 2.5769230769s backwards reverse; }
+
+polygon:nth-of-type(2) {
+  animation: flickerIn 1.5s 2.6538461538s backwards, flickerInStroke 1.5s 2.6538461538s backwards reverse; }
+
+polygon:nth-of-type(3) {
+  animation: flickerIn 1.5s 2.7307692308s backwards, flickerInStroke 1.5s 2.7307692308s backwards reverse; }
+
+polygon:nth-of-type(4) {
+  animation: flickerIn 1.5s 2.8076923077s backwards, flickerInStroke 1.5s 2.8076923077s backwards reverse; }
+
+polygon:nth-of-type(5) {
+  animation: flickerIn 1.5s 2.8846153846s backwards, flickerInStroke 1.5s 2.8846153846s backwards reverse; }
+
+polygon:nth-of-type(6) {
+  animation: flickerIn 1.5s 2.9615384615s backwards, flickerInStroke 1.5s 2.9615384615s backwards reverse; }
+
+polygon:nth-of-type(7) {
+  animation: flickerIn 1.5s 3.0384615385s backwards, flickerInStroke 1.5s 3.0384615385s backwards reverse; }
+
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -151,6 +179,50 @@ img {
     transform: translate3d(100px, 0px, 2000px); }
   to {
     transform: translate3d(0px, 0px, 0px); } }
+@keyframes flickerIn {
+  0% {
+    fill: black; }
+  19% {
+    fill: black; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: black; }
+  80% {
+    fill: #000; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: #000; }
+  98% {
+    fill: black; }
+  99% {
+    fill: white; }
+  100% {
+    fill: black; } }
+@keyframes flickerInStroke {
+  0% {
+    stroke: black; }
+  56% {
+    stroke: black; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: black; }
+  73% {
+    stroke: black; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: black; }
+  100% {
+    stroke: black; } }
 g.ccw[data-driver='12'][data-self='16'] {
   animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 

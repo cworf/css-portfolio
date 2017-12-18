@@ -132,6 +132,16 @@ img {
     grid-gap: 1em;
 }
 
+.social-menu {
+    padding-top: 150px;
+    padding-right: 100px;
+}
+
+section#intro p {
+    padding-right: 20px;
+}
+
+
 
 // #Gears > g > g {
 //     transition: .5s ease;
@@ -144,6 +154,15 @@ img {
 
     }
 }
+
+@for $i from 1 through 7 {
+    $delay : $i/13 + 2.5;
+    // polygon#start-#{$i} {
+    polygon:nth-of-type(#{$i}){
+        animation: flickerIn 1.5s #{$delay}s backwards, flickerInStroke 1.5s #{$delay}s backwards reverse;
+    }
+}
+
 
 @keyframes slideInLeft {
     from{
@@ -164,6 +183,75 @@ img {
     to {
         transform: translate3d(0px, 0px, 0px);
     }
+}
+
+
+@keyframes flickerIn {
+    0%{
+  	fill:black;
+    }
+    19%{
+  	fill: black;
+    }
+    21%{
+  	fill: #ffffff75;
+    }
+    25%{
+  	fill: #ffffff75;
+    }
+    25%{
+        fill: black;
+    }
+    80%{
+    fill: #000;
+    }
+    81%{
+    fill: #ffffff75;
+    }
+    82%{
+    fill: #000;
+}
+    98%{
+        fill:black
+    }
+    99%{
+        fill:white
+    }
+    100%{
+        fill:black;
+    }
+}
+@keyframes flickerInStroke {
+    0%{
+ 	stroke:black;
+   }
+   56%{
+       stroke: black;
+   }
+   58%{
+       stroke: red;
+   }
+   61%{
+       stroke: red;
+   }
+   64%{
+       stroke: black;
+   }
+   73%{
+       stroke: black;
+   }
+   75%{
+       stroke: red;
+   }
+   79%{
+       stroke: red;
+   }
+   81%{
+       stroke: black;
+   }
+   100%{
+       stroke: black;
+   }
 }
 
 
