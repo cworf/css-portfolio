@@ -27,17 +27,28 @@ $(document).ready(function(){
           var elementLocation = $(linkHash).offset().top;
           var distance = Math.abs(windowLocation - elementLocation);
           var color = distance / 2;
+          var sectionName = linkHash.substring(1);
 
+//accent lighting
           $(this).children('path:nth-of-type(2)').css('fill', 'rgb(255, ' + color + ', ' + color + ')')
 
+//fill outer circle with red
           if(visible($(linkHash))){
               $(this).children('path:nth-of-type(1)').css('fill', 'red');
+              $(linkHash).addClass('visible');
+              $(".social-menu svg").attr('class', sectionName);
+
           }
           else {
               $(this).children('path:nth-of-type(1)').css('fill', 'white');
+              $(linkHash).removeClass('visible');
           }
+
+
       });
   });
+
+  // detect current section
 
   function visible(section){
 
@@ -52,5 +63,6 @@ $(document).ready(function(){
       //return true if container is either fully inside the window or taking up more than half of the window
       return (((sectionBtm <= windowBtm) && (sectionTop >= windowTop)) || ((sectionBtm >= windowBtm) && (((sectionTop - windowTop) / $(window).height()) < .5)) || ((sectionTop <= windowTop) && (((windowBtm - sectionBtm) / $(window).height()) < .5)));
   }
+
 
 });

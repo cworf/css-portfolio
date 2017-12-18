@@ -26,7 +26,9 @@ section {
   padding: 50px 0 0 50px;
   background-size: 6.2%;
   background-position-y: 16px;
-  animation: gearUp 2s 0.7s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29); }
+  animation: gearUp 2s 0.7s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29);
+  position: relative;
+  z-index: 1; }
 
 .gear-box {
   position: relative;
@@ -113,8 +115,10 @@ img {
   grid-gap: 1em; }
 
 .social-menu {
-  padding-top: 150px;
-  padding-right: 100px; }
+  padding: 150px 50px; }
+  .social-menu svg {
+    position: sticky;
+    top: 50px; }
 
 section#intro p {
   padding-right: 20px; }
