@@ -2,12 +2,39 @@ body {
   background: #000;
   color: #d6d6d6; }
 
+h1 {
+  margin-bottom: 30px; }
+
 svg path {
   fill: #fff;
   transition: .5s ease; }
 
 section {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  position: relative; }
+  section:before {
+    position: absolute;
+    content: "";
+    left: -8px;
+    top: -8px;
+    width: 0%;
+    height: 0%;
+    visibility: hidden;
+    border: solid red;
+    border-width: 1px 0 0 1px;
+    box-shadow: -1px 0px red;
+    transition: 2s ease; }
+  section.visible:before {
+    position: absolute;
+    visibility: visible;
+    content: "";
+    left: -19px;
+    top: -8px;
+    width: calc(100% + 55px);
+    height: 109%;
+    border: solid red;
+    border-width: 1px 0 0 1px;
+    box-shadow: -1px 0px red; }
 
 .mobile-burger {
   display: none;
@@ -114,12 +141,6 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1em; }
 
-.social-menu {
-  padding: 150px 50px; }
-  .social-menu svg {
-    position: sticky;
-    top: 50px; }
-
 section#intro p {
   padding-right: 20px; }
 
@@ -170,6 +191,97 @@ polygon:nth-of-type(6) {
 
 polygon:nth-of-type(7) {
   animation: flickerIn 1.5s 3.0384615385s backwards, flickerInStroke 1.5s 3.0384615385s backwards reverse; }
+
+.social-menu {
+  padding: 150px 50px; }
+  .social-menu svg {
+    position: sticky;
+    top: 150px; }
+  .social-menu .code polygon#start-1 {
+    animation: flickerTrans1 0.2s 0.0769230769s backwards, flickerTransStroke1 0.5s 0.0769230769s backwards reverse; }
+  .social-menu .code polygon#start-2 {
+    animation: flickerTrans1 0.2s 0.1538461538s backwards, flickerTransStroke1 0.5s 0.1538461538s backwards reverse; }
+  .social-menu .code polygon#start-3 {
+    animation: flickerTrans1 0.2s 0.2307692308s backwards, flickerTransStroke1 0.5s 0.2307692308s backwards reverse; }
+  .social-menu .code polygon#start-4 {
+    animation: flickerTrans1 0.2s 0.3076923077s backwards, flickerTransStroke1 0.5s 0.3076923077s backwards reverse; }
+  .social-menu .code polygon#start-5 {
+    animation: flickerTrans1 0.2s 0.3846153846s backwards, flickerTransStroke1 0.5s 0.3846153846s backwards reverse; }
+  .social-menu .code polygon#start-6 {
+    animation: flickerTrans1 0.2s 0.4615384615s backwards, flickerTransStroke1 0.5s 0.4615384615s backwards reverse; }
+  .social-menu .code polygon#start-7 {
+    animation: flickerTrans1 0.2s 0.5384615385s backwards, flickerTransStroke1 0.5s 0.5384615385s backwards reverse; }
+  .social-menu .code #start-1 {
+    fill: #fff; }
+  .social-menu .intro polygon#start-1 {
+    animation: flickerTrans2 0.2s 0.0769230769s backwards, flickerTransStroke2 0.5s 0.0769230769s backwards reverse; }
+  .social-menu .intro polygon#start-2 {
+    animation: flickerTrans2 0.2s 0.1538461538s backwards, flickerTransStroke2 0.5s 0.1538461538s backwards reverse; }
+  .social-menu .intro polygon#start-3 {
+    animation: flickerTrans2 0.2s 0.2307692308s backwards, flickerTransStroke2 0.5s 0.2307692308s backwards reverse; }
+  .social-menu .intro polygon#start-4 {
+    animation: flickerTrans2 0.2s 0.3076923077s backwards, flickerTransStroke2 0.5s 0.3076923077s backwards reverse; }
+  .social-menu .intro polygon#start-5 {
+    animation: flickerTrans2 0.2s 0.3846153846s backwards, flickerTransStroke2 0.5s 0.3846153846s backwards reverse; }
+  .social-menu .intro polygon#start-6 {
+    animation: flickerTrans2 0.2s 0.4615384615s backwards, flickerTransStroke2 0.5s 0.4615384615s backwards reverse; }
+  .social-menu .intro polygon#start-7 {
+    animation: flickerTrans2 0.2s 0.5384615385s backwards, flickerTransStroke2 0.5s 0.5384615385s backwards reverse; }
+  .social-menu .intro #start-1 {
+    fill: transparent; }
+  .social-menu .web-design polygon#start-1 {
+    animation: flickerTrans3 0.2s 0.0769230769s backwards, flickerTransStroke3 0.5s 0.0769230769s backwards reverse; }
+  .social-menu .web-design polygon#start-2 {
+    animation: flickerTrans3 0.2s 0.1538461538s backwards, flickerTransStroke3 0.5s 0.1538461538s backwards reverse; }
+  .social-menu .web-design polygon#start-3 {
+    animation: flickerTrans3 0.2s 0.2307692308s backwards, flickerTransStroke3 0.5s 0.2307692308s backwards reverse; }
+  .social-menu .web-design polygon#start-4 {
+    animation: flickerTrans3 0.2s 0.3076923077s backwards, flickerTransStroke3 0.5s 0.3076923077s backwards reverse; }
+  .social-menu .web-design polygon#start-5 {
+    animation: flickerTrans3 0.2s 0.3846153846s backwards, flickerTransStroke3 0.5s 0.3846153846s backwards reverse; }
+  .social-menu .web-design polygon#start-6 {
+    animation: flickerTrans3 0.2s 0.4615384615s backwards, flickerTransStroke3 0.5s 0.4615384615s backwards reverse; }
+  .social-menu .web-design polygon#start-7 {
+    animation: flickerTrans3 0.2s 0.5384615385s backwards, flickerTransStroke3 0.5s 0.5384615385s backwards reverse; }
+  .social-menu .web-design #start-1, .social-menu .web-design #start3 {
+    fill: #fff; }
+  .social-menu .web-design #start-7 {
+    fill: transparent; }
+  .social-menu .art polygon#start-1 {
+    animation: flickerTrans4 0.2s 0.0769230769s backwards, flickerTransStroke4 0.5s 0.0769230769s backwards reverse; }
+  .social-menu .art polygon#start-2 {
+    animation: flickerTrans4 0.2s 0.1538461538s backwards, flickerTransStroke4 0.5s 0.1538461538s backwards reverse; }
+  .social-menu .art polygon#start-3 {
+    animation: flickerTrans4 0.2s 0.2307692308s backwards, flickerTransStroke4 0.5s 0.2307692308s backwards reverse; }
+  .social-menu .art polygon#start-4 {
+    animation: flickerTrans4 0.2s 0.3076923077s backwards, flickerTransStroke4 0.5s 0.3076923077s backwards reverse; }
+  .social-menu .art polygon#start-5 {
+    animation: flickerTrans4 0.2s 0.3846153846s backwards, flickerTransStroke4 0.5s 0.3846153846s backwards reverse; }
+  .social-menu .art polygon#start-6 {
+    animation: flickerTrans4 0.2s 0.4615384615s backwards, flickerTransStroke4 0.5s 0.4615384615s backwards reverse; }
+  .social-menu .art polygon#start-7 {
+    animation: flickerTrans4 0.2s 0.5384615385s backwards, flickerTransStroke4 0.5s 0.5384615385s backwards reverse; }
+  .social-menu .art #start-1 {
+    fill: #fff;
+    transform: translateX(50%); }
+  .social-menu .art #start-5 {
+    fill: #fff; }
+  .social-menu .lighting polygon#start-1 {
+    animation: flickerTrans5 0.2s 0.0769230769s backwards, flickerTransStroke5 0.5s 0.0769230769s backwards reverse; }
+  .social-menu .lighting polygon#start-2 {
+    animation: flickerTrans5 0.2s 0.1538461538s backwards, flickerTransStroke5 0.5s 0.1538461538s backwards reverse; }
+  .social-menu .lighting polygon#start-3 {
+    animation: flickerTrans5 0.2s 0.2307692308s backwards, flickerTransStroke5 0.5s 0.2307692308s backwards reverse; }
+  .social-menu .lighting polygon#start-4 {
+    animation: flickerTrans5 0.2s 0.3076923077s backwards, flickerTransStroke5 0.5s 0.3076923077s backwards reverse; }
+  .social-menu .lighting polygon#start-5 {
+    animation: flickerTrans5 0.2s 0.3846153846s backwards, flickerTransStroke5 0.5s 0.3846153846s backwards reverse; }
+  .social-menu .lighting polygon#start-6 {
+    animation: flickerTrans5 0.2s 0.4615384615s backwards, flickerTransStroke5 0.5s 0.4615384615s backwards reverse; }
+  .social-menu .lighting polygon#start-7 {
+    animation: flickerTrans5 0.2s 0.5384615385s backwards, flickerTransStroke5 0.5s 0.5384615385s backwards reverse; }
+  .social-menu .lighting #start-3 {
+    fill: transparent; }
 
 @keyframes slideInLeft {
   from {
@@ -227,6 +339,226 @@ polygon:nth-of-type(7) {
     stroke: black; }
   100% {
     stroke: black; } }
+@keyframes flickerTrans1 {
+  0% {
+    fill: transparent; }
+  19% {
+    fill: transparent; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: transparent; }
+  80% {
+    fill: transparent; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: transparent; }
+  98% {
+    fill: transparent; }
+  99% {
+    fill: white; }
+  100% {
+    fill: transparent; } }
+@keyframes flickerTransStroke1 {
+  0% {
+    stroke: transparent; }
+  56% {
+    stroke: transparent; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: transparent; }
+  73% {
+    stroke: transparent; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: transparent; }
+  100% {
+    stroke: transparent; } }
+@keyframes flickerTrans2 {
+  0% {
+    fill: transparent; }
+  19% {
+    fill: transparent; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: transparent; }
+  80% {
+    fill: transparent; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: transparent; }
+  98% {
+    fill: transparent; }
+  99% {
+    fill: white; }
+  100% {
+    fill: transparent; } }
+@keyframes flickerTransStroke2 {
+  0% {
+    stroke: transparent; }
+  56% {
+    stroke: transparent; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: transparent; }
+  73% {
+    stroke: transparent; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: transparent; }
+  100% {
+    stroke: transparent; } }
+@keyframes flickerTrans3 {
+  0% {
+    fill: transparent; }
+  19% {
+    fill: transparent; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: transparent; }
+  80% {
+    fill: transparent; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: transparent; }
+  98% {
+    fill: transparent; }
+  99% {
+    fill: white; }
+  100% {
+    fill: transparent; } }
+@keyframes flickerTransStroke3 {
+  0% {
+    stroke: transparent; }
+  56% {
+    stroke: transparent; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: transparent; }
+  73% {
+    stroke: transparent; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: transparent; }
+  100% {
+    stroke: transparent; } }
+@keyframes flickerTrans4 {
+  0% {
+    fill: transparent; }
+  19% {
+    fill: transparent; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: transparent; }
+  80% {
+    fill: transparent; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: transparent; }
+  98% {
+    fill: transparent; }
+  99% {
+    fill: white; }
+  100% {
+    fill: transparent; } }
+@keyframes flickerTransStroke4 {
+  0% {
+    stroke: transparent; }
+  56% {
+    stroke: transparent; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: transparent; }
+  73% {
+    stroke: transparent; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: transparent; }
+  100% {
+    stroke: transparent; } }
+@keyframes flickerTrans5 {
+  0% {
+    fill: transparent; }
+  19% {
+    fill: transparent; }
+  21% {
+    fill: #ffffff75; }
+  25% {
+    fill: #ffffff75; }
+  25% {
+    fill: transparent; }
+  80% {
+    fill: transparent; }
+  81% {
+    fill: #ffffff75; }
+  82% {
+    fill: transparent; }
+  98% {
+    fill: transparent; }
+  99% {
+    fill: white; }
+  100% {
+    fill: transparent; } }
+@keyframes flickerTransStroke5 {
+  0% {
+    stroke: transparent; }
+  56% {
+    stroke: transparent; }
+  58% {
+    stroke: red; }
+  61% {
+    stroke: red; }
+  64% {
+    stroke: transparent; }
+  73% {
+    stroke: transparent; }
+  75% {
+    stroke: red; }
+  79% {
+    stroke: red; }
+  81% {
+    stroke: transparent; }
+  100% {
+    stroke: transparent; } }
 g.ccw[data-driver='12'][data-self='16'] {
   animation: slideInLeft 0.5s backwards cubic-bezier(0.25, 0.1, 0.45, 1.29), introRotateCCW1216 2s 0.7s cubic-bezier(0.25, 0.1, 0.45, 1.29); }
 

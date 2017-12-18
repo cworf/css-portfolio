@@ -3,6 +3,8 @@ body {
     color: #d6d6d6;
 }
 
+h1 {margin-bottom: 30px;}
+
 svg path {
     fill: #fff;
     transition: .5s ease;
@@ -10,6 +12,32 @@ svg path {
 
 section {
     margin-bottom: 30px;
+    position: relative;
+    &:before {
+        position: absolute;
+        content: "";
+        left: -8px;
+        top: -8px;
+        width: 0%;
+        height: 0%;
+        visibility:hidden;
+        border: solid red;
+        border-width: 1px 0 0 1px;
+        box-shadow: -1px 0px red;
+        transition:2s ease;
+    }
+    &.visible:before {
+        position: absolute;
+        visibility: visible;
+        content: "";
+        left: -19px;
+        top: -8px;
+        width: calc(100% + 55px);
+        height: 109%;
+        border: solid red;
+        border-width: 1px 0 0 1px;
+        box-shadow: -1px 0px red;
+    }
 }
 
 .mobile-burger {
@@ -134,13 +162,9 @@ img {
     grid-gap: 1em;
 }
 
-.social-menu {
-    padding: 150px 50px;
-    svg{
-        position: sticky;
-        top:50px;
-    }
-}
+
+
+
 
 section#intro p {
     padding-right: 20px;
@@ -165,6 +189,95 @@ section#intro p {
     // polygon#start-#{$i} {
     polygon:nth-of-type(#{$i}){
         animation: flickerIn 1.5s #{$delay}s backwards, flickerInStroke 1.5s #{$delay}s backwards reverse;
+    }
+}
+@mixin flickerTransition1 {
+    @for $i from 1 through 7 {
+        polygon#start-#{$i}{
+            $delay : $i/13;
+            animation: flickerTrans1 .2s #{$delay}s backwards, flickerTransStroke1 .5s #{$delay}s backwards reverse;
+        }
+    }
+}
+@mixin flickerTransition2 {
+    @for $i from 1 through 7 {
+        polygon#start-#{$i}{
+            $delay : $i/13;
+            animation: flickerTrans2 .2s #{$delay}s backwards, flickerTransStroke2 .5s #{$delay}s backwards reverse;
+        }
+    }
+}
+@mixin flickerTransition3 {
+    @for $i from 1 through 7 {
+        polygon#start-#{$i}{
+            $delay : $i/13;
+            animation: flickerTrans3 .2s #{$delay}s backwards, flickerTransStroke3 .5s #{$delay}s backwards reverse;
+        }
+    }
+}
+@mixin flickerTransition4 {
+    @for $i from 1 through 7 {
+        polygon#start-#{$i}{
+            $delay : $i/13;
+            animation: flickerTrans4 .2s #{$delay}s backwards, flickerTransStroke4 .5s #{$delay}s backwards reverse;
+        }
+    }
+}
+@mixin flickerTransition5 {
+    @for $i from 1 through 7 {
+        polygon#start-#{$i}{
+            $delay : $i/13;
+            animation: flickerTrans5 .2s #{$delay}s backwards, flickerTransStroke5 .5s #{$delay}s backwards reverse;
+        }
+    }
+}
+
+.social-menu {
+    padding: 150px 50px;
+
+    svg{
+        position: sticky;
+        top:150px;
+
+    }
+
+    .code {
+        @include flickerTransition1;
+
+        #start-1 {
+            fill: #fff;
+        }
+    }
+    .intro {
+        @include flickerTransition2;
+        #start-1 {
+            fill:transparent;
+        }
+    }
+    .web-design {
+        @include flickerTransition3;
+        #start-1, #start3 {
+            fill:#fff;
+        }
+        #start-7 {
+            fill:transparent;
+        }
+    }
+    .art {
+        @include flickerTransition4;
+        #start-1 {
+            fill:#fff;
+            transform:translateX(50%);
+        }
+        #start-5 {
+            fill:#fff;
+        }
+    }
+    .lighting {
+        @include flickerTransition5;
+        #start-3 {
+            fill:transparent;
+        }
     }
 }
 
@@ -215,7 +328,7 @@ section#intro p {
     }
     82%{
     fill: #000;
-}
+    }
     98%{
         fill:black
     }
@@ -257,6 +370,76 @@ section#intro p {
    100%{
        stroke: black;
    }
+}
+
+@for $i from 1 through 5{
+    @keyframes flickerTrans#{$i} {
+        0%{
+            fill:transparent;
+        }
+        19%{
+            fill: transparent;
+        }
+        21%{
+            fill: #ffffff75;
+        }
+        25%{
+            fill: #ffffff75;
+        }
+        25%{
+            fill: transparent;
+        }
+        80%{
+            fill: transparent;
+        }
+        81%{
+            fill: #ffffff75;
+        }
+        82%{
+            fill: transparent;
+        }
+        98%{
+            fill: transparent;
+        }
+        99%{
+            fill:white;
+        }
+        100%{
+            fill:transparent;
+        }
+    }
+    @keyframes flickerTransStroke#{$i} {
+        0%{
+            stroke:transparent;
+        }
+        56%{
+            stroke: transparent;
+        }
+        58%{
+            stroke: red;
+        }
+        61%{
+            stroke: red;
+        }
+        64%{
+            stroke: transparent;
+        }
+        73%{
+            stroke: transparent;
+        }
+        75%{
+            stroke: red;
+        }
+        79%{
+            stroke: red;
+        }
+        81%{
+            stroke: transparent;
+        }
+        100%{
+            stroke: transparent;
+        }
+    }
 }
 
 
