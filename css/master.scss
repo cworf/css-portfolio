@@ -238,7 +238,7 @@ section#intro p {
     svg{
         position: sticky;
         top:150px;
-
+        vertical-align: bottom;
     }
 
     .code {
@@ -279,8 +279,47 @@ section#intro p {
             fill:transparent;
         }
     }
+    .social-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        overflow: hidden;
+        padding: 20px 0;
+    }
+    .sticky {
+        position: sticky;
+        top: 150px;
+    }
+    .circle {
+        height: 50px;
+        width: 50px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        font-size: 2em;
+        position: relative;
+        color:#000;
+    }
+    @for $i from 1 through 3 {
+        $delay : $i / 6.5 + 4.5;
+        .circle:nth-of-type(#{$i}) {
+            animation: slideInTop 0.5s #{$delay}s cubic-bezier(0.46, 0.18, 0.46, 1.6) backwards;
+        }
+    }
 }
 
+@keyframes slideInTop {
+    from{
+        transform: translateY(-200px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 
 @keyframes slideInLeft {
     from{

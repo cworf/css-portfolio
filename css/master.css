@@ -196,7 +196,8 @@ polygon:nth-of-type(7) {
   padding: 150px 50px; }
   .social-menu svg {
     position: sticky;
-    top: 150px; }
+    top: 150px;
+    vertical-align: bottom; }
   .social-menu .code polygon#start-1 {
     animation: flickerTrans1 0.2s 0.0769230769s backwards, flickerTransStroke1 0.5s 0.0769230769s backwards reverse; }
   .social-menu .code polygon#start-2 {
@@ -282,7 +283,40 @@ polygon:nth-of-type(7) {
     animation: flickerTrans5 0.2s 0.5384615385s backwards, flickerTransStroke5 0.5s 0.5384615385s backwards reverse; }
   .social-menu .lighting #start-3 {
     fill: transparent; }
+  .social-menu .social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    overflow: hidden;
+    padding: 20px 0; }
+  .social-menu .sticky {
+    position: sticky;
+    top: 150px; }
+  .social-menu .circle {
+    height: 50px;
+    width: 50px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    font-size: 2em;
+    position: relative;
+    color: #000; }
+  .social-menu .circle:nth-of-type(1) {
+    animation: slideInTop 0.5s 4.6538461538s cubic-bezier(0.46, 0.18, 0.46, 1.6) backwards; }
+  .social-menu .circle:nth-of-type(2) {
+    animation: slideInTop 0.5s 4.8076923077s cubic-bezier(0.46, 0.18, 0.46, 1.6) backwards; }
+  .social-menu .circle:nth-of-type(3) {
+    animation: slideInTop 0.5s 4.9615384615s cubic-bezier(0.46, 0.18, 0.46, 1.6) backwards; }
 
+@keyframes slideInTop {
+  from {
+    transform: translateY(-200px); }
+  to {
+    transform: translateX(0); } }
 @keyframes slideInLeft {
   from {
     opacity: 0;
